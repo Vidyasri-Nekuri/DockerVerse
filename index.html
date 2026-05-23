@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DockerVerse</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+    <!-- Loader -->
+
+    <div id="loader">
+
+        <div class="loader-logo">
+
+            <div class="loader-circle"></div>
+
+            <h1>DockerVerse</h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- Cursor Glow -->
+
+    <div class="cursor-glow"></div>
+
+
+    <!-- Back To Top -->
+
+    <button id="backToTop">↑</button>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">DockerVerse</div>
+
+        <ul class="nav-links">
+
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#architecture">Architecture</a></li>
+            <li><a href="#commands">Commands</a></li>
+            <li><a href="#lifecycle">Lifecycle</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+
+        </ul>
+
+        <button class="nav-btn">Get Started</button>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <section class="hero" id="hero">
+
+        <div class="hero-left">
+
+            <p class="mini-title">
+                INTERACTIVE DOCKER LEARNING PLATFORM
+            </p>
+
+            <h1>
+                Learn Docker
+                <span>Visually & Interactively</span>
+            </h1>
+
+            <p class="hero-description">
+                Master Docker from beginner to intermediate level using interactive simulations, Docker workflows,
+                lifecycle animations and terminal playgrounds.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn">
+                    Start Learning
+                </button>
+
+                <button class="secondary-btn">
+                    Explore Commands
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-right">
+
+            <div class="terminal-card floating">
+
+                <div class="terminal-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div class="terminal-body">
+
+                    <p><span>$</span> docker run nginx</p>
+
+                    <p class="success">
+                        Container started successfully...
+                    </p>
+
+                    <div class="typing-line">
+                        <span>$</span>
+                        <span id="typing-text"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="floating-box box1">IMAGE</div>
+            <div class="floating-box box2">CONTAINER</div>
+            <div class="floating-box box3">DOCKERFILE</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Architecture -->
+
+    <section class="architecture-section" id="architecture">
+
+        <div class="section-heading">
+            <p>DOCKER ARCHITECTURE</p>
+            <h2>Understand How Docker Works</h2>
+        </div>
+
+        <div class="architecture-container">
+
+            <div class="architecture-node" data-info="Docker Client sends commands to Docker Daemon.">
+                Docker Client
+            </div>
+
+            <div class="arrow">➜</div>
+
+            <div class="architecture-node" data-info="Docker Daemon builds and manages containers.">
+                Docker Daemon
+            </div>
+
+            <div class="arrow">➜</div>
+
+            <div class="architecture-node" data-info="Docker Images are templates used to create containers.">
+                Docker Images
+            </div>
+
+            <div class="arrow">➜</div>
+
+            <div class="architecture-node" data-info="Containers are running instances of Docker images.">
+                Containers
+            </div>
+
+        </div>
+
+        <div class="info-box" id="infoBox">
+            Click a component to learn more.
+        </div>
+
+    </section>
+
+
+    <!-- Commands -->
+
+    <section class="commands-section" id="commands">
+
+        <div class="section-heading">
+            <p>DOCKER COMMANDS</p>
+            <h2>Interactive Command Playground</h2>
+        </div>
+
+        <div class="commands-container">
+
+            <div class="command-list">
+
+                <button class="command-btn active-command" data-command="docker ps"
+                    data-description="Lists all running containers." data-output="CONTAINER ID IMAGE STATUS">
+                    docker ps
+                </button>
+
+                <button class="command-btn" data-command="docker images" data-description="Displays all Docker images."
+                    data-output="REPOSITORY TAG IMAGE ID">
+                    docker images
+                </button>
+
+                <button class="command-btn" data-command="docker run nginx" data-description="Runs nginx container."
+                    data-output="Container started successfully">
+                    docker run
+                </button>
+
+                <button class="command-btn" data-command="docker stop container_id"
+                    data-description="Stops running container." data-output="container_id">
+                    docker stop
+                </button>
+
+                <button class="command-btn" data-command="docker logs container_id"
+                    data-description="Displays container logs." data-output="[INFO] Server running...">
+                    docker logs
+                </button>
+
+            </div>
+
+
+            <div class="command-display">
+
+                <div class="terminal-card command-terminal">
+
+                    <div class="terminal-header">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <p class="terminal-command">
+                            <span>$</span>
+                            <span id="selectedCommand">docker ps</span>
+                        </p>
+
+                        <p id="commandDescription">
+                            Lists all running containers.
+                        </p>
+
+                        <div class="output-box">
+                            <p id="commandOutput">
+                                CONTAINER ID IMAGE STATUS
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Lifecycle -->
+
+    <section class="lifecycle-section" id="lifecycle">
+
+        <div class="section-heading">
+            <p>DOCKER LIFECYCLE</p>
+            <h2>Understand Container Lifecycle</h2>
+        </div>
+
+        <div class="lifecycle-container">
+
+            <div class="lifecycle-box active-life" id="dockerfileBox">
+                Dockerfile
+            </div>
+
+            <div class="life-arrow">➜</div>
+
+            <div class="lifecycle-box" id="imageBox">
+                Docker Image
+            </div>
+
+            <div class="life-arrow">➜</div>
+
+            <div class="lifecycle-box" id="containerBox">
+                Container
+            </div>
+
+            <div class="life-arrow">➜</div>
+
+            <div class="lifecycle-box" id="runningBox">
+                Running App
+            </div>
+
+        </div>
+
+
+        <div class="lifecycle-buttons">
+
+            <button class="life-btn" onclick="buildImage()">
+                Build Image
+            </button>
+
+            <button class="life-btn" onclick="runContainer()">
+                Run Container
+            </button>
+
+            <button class="life-btn danger-btn" onclick="stopContainer()">
+                Stop Container
+            </button>
+
+        </div>
+
+
+        <div class="lifecycle-status" id="lifeStatus">
+            Dockerfile is ready to build image.
+        </div>
+
+    </section>
+
+
+    <!-- Dockerfile Generator -->
+
+    <section class="generator-section">
+
+        <div class="section-heading">
+            <p>DOCKERFILE GENERATOR</p>
+            <h2>Generate Dockerfiles Instantly</h2>
+        </div>
+
+        <div class="generator-container">
+
+            <div class="generator-form">
+
+                <div class="input-group">
+                    <label>Base Image</label>
+
+                    <select id="baseImage">
+                        <option value="node:18">node:18</option>
+                        <option value="python:3.11">python:3.11</option>
+                        <option value="nginx:latest">nginx:latest</option>
+                        <option value="ubuntu:latest">ubuntu:latest</option>
+                    </select>
+                </div>
+
+
+                <div class="input-group">
+                    <label>Working Directory</label>
+
+                    <input type="text" id="workDir" value="/app" />
+                </div>
+
+
+                <div class="input-group">
+                    <label>Expose Port</label>
+
+                    <input type="number" id="port" value="3000" />
+                </div>
+
+
+                <div class="input-group">
+                    <label>Start Command</label>
+
+                    <input type="text" id="startCommand" value="npm start" />
+                </div>
+
+
+                <button class="generate-btn" onclick="generateDockerfile()">
+                    Generate Dockerfile
+                </button>
+
+            </div>
+
+
+            <div class="dockerfile-output">
+
+                <div class="terminal-card">
+
+                    <div class="terminal-header">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <pre id="dockerfileCode">
+FROM node:18
+
+WORKDIR /app
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["npm","start"]
+</pre>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Quiz -->
+
+    <section class="quiz-section" id="quiz">
+
+        <div class="section-heading">
+            <p>DOCKER QUIZ</p>
+            <h2>Test Your Docker Knowledge</h2>
+        </div>
+
+        <div class="quiz-container">
+
+            <div class="quiz-card">
+
+                <h3>
+                    Which command lists running Docker containers?
+                </h3>
+
+                <div class="quiz-options">
+
+                    <button class="quiz-option" onclick="checkAnswer(this, false)">
+                        docker build
+                    </button>
+
+                    <button class="quiz-option" onclick="checkAnswer(this, true)">
+                        docker ps
+                    </button>
+
+                    <button class="quiz-option" onclick="checkAnswer(this, false)">
+                        docker stop
+                    </button>
+
+                    <button class="quiz-option" onclick="checkAnswer(this, false)">
+                        docker logs
+                    </button>
+
+                </div>
+
+                <p id="quizResult">
+                    Select the correct answer.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer class="footer-section">
+
+        <div class="section-heading">
+            <p>DOCKER CHEATSHEET</p>
+            <h2>Quick Command Reference</h2>
+        </div>
+
+        <div class="footer-container">
+
+            <div class="footer-card">
+
+                <h3>Container Commands</h3>
+
+                <ul>
+                    <li>docker ps</li>
+                    <li>docker run</li>
+                    <li>docker stop</li>
+                    <li>docker rm</li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-card">
+
+                <h3>Image Commands</h3>
+
+                <ul>
+                    <li>docker build</li>
+                    <li>docker pull</li>
+                    <li>docker images</li>
+                    <li>docker rmi</li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-card">
+
+                <h3>Volume Commands</h3>
+
+                <ul>
+                    <li>docker volume ls</li>
+                    <li>docker volume create</li>
+                    <li>docker volume rm</li>
+                </ul>
+
+            </div>
+
+
+            <div class="footer-card">
+
+                <h3>Network Commands</h3>
+
+                <ul>
+                    <li>docker network ls</li>
+                    <li>docker network create</li>
+                    <li>docker network rm</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                Built with ❤️ for Docker learners.
+            </p>
+
+            <p class="footer-brand">
+                DockerVerse © 2026
+            </p>
+
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
