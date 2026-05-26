@@ -1,34 +1,79 @@
-# DockerVerse
-Interactive Docker Learning Platform built with HTML, CSS, JS &amp; Docker
 # DockerVerse 🚀
 
-DockerVerse is an interactive Docker learning platform built using HTML, CSS, JavaScript and Docker.
+DockerVerse is a Docker-themed static web application deployed on AWS EC2 using Docker and Nginx.
+
+## Technologies Used
+
+- AWS EC2
+- Docker
+- Nginx
+- HTML
+- CSS
+- GitHub Pages
+
+---
 
 ## Features
 
-- Docker Architecture Visualization
-- Interactive Docker Commands
-- Docker Lifecycle Animation
-- Dockerfile Generator
-- Docker Quiz
-- Docker Cheatsheet
 - Responsive UI
-- Dark Navy Docker Theme
+- Containerized deployment
+- Public cloud hosting
+- Nginx web server
+- Dockerized application
 
-## Tech Stack
+---
 
-- HTML5
-- CSS3
-- JavaScript
-- Docker
-- Nginx
+## Architecture
 
-## Run Using Docker
+User → AWS EC2 → Docker Container → Nginx → Web Application
+
+---
+
+## Docker Setup
+
+### Build Docker Image
 
 ```bash
-docker run -d -p 8080:80 \
--v $(pwd):/usr/share/nginx/html nginx
+docker build -t dockerverse .
+```
+
+### Run Docker Container
+
+```bash
+docker run -d -p 8080:80 dockerverse
+```
+
+---
 
 ## Live Demo
 
+AWS Deployment:
+http://54.167.128.128:8080/
+
+GitHub Pages:
 https://vidyasri-nekuri.github.io/DockerVerse/
+
+---
+
+## Screenshots
+
+### Docker Container Running
+
+(Add image here)
+
+### AWS EC2 Deployment
+
+(Add image here)
+
+### Live Application
+
+(Add image here)
+
+---
+
+## Future Improvements
+
+- Add CI/CD pipeline
+- Add HTTPS
+- Deploy using Kubernetes
+- Add monitoring
