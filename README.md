@@ -118,22 +118,6 @@ https://vidyasri-nekuri.github.io/DockerVerse/
 
 ---
 
-## 📸 Screenshots
-
-### Docker Container Running
-
-(Add screenshot here)
-
-### AWS EC2 Deployment
-
-(Add screenshot here)
-
-### Live Application
-
-(Add screenshot here)
-
----
-
 ## 🚀 Future Improvements
 
 * Implement CI/CD pipeline using GitHub Actions
