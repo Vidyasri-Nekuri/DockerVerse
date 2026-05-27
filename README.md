@@ -48,7 +48,7 @@ docker run -d -p 8080:80 dockerverse
 ## Live Demo
 
 AWS Deployment:
-http://54.167.128.128:8080/
+http://54.86.51.8:2407/
 
 GitHub Pages:
 https://vidyasri-nekuri.github.io/DockerVerse/
